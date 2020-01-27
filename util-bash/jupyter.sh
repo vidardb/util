@@ -54,7 +54,15 @@ EOF
 
 ## start action
 _start() {
-    jupyter notebook --config ${profileFile}
+    OPT=""
+
+    uid=`id -u`
+    if [ $uid -eq '0' ]; then 
+      # echo "Must running in root privilege.";
+      OPT="$OPT --allow-root"
+    fi
+
+    jupyter notebook ${OPT} --config ${profileFile}
 }
 
 ## usage
