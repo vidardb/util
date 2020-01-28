@@ -2,6 +2,7 @@
 
 CURDIR=$(cd "$(dirname "$0")"; pwd);
 MYNAME="${0##*/}"
+PASS="vidardb2019"
 
 jpyProfile=vidardb3
 profileFile="${HOME}/.ipython/profile_${jpyProfile}/ipython_kernel_config.py"
@@ -33,7 +34,6 @@ _install() {
     ipython profile create ${jpyProfile}
     #cat ~/.ipython/profile_${jpyProfile}/ipython_kernel_config.py
 
-    PASS="vidardb2019"
     iPASS=`ipython -c "from IPython.lib import passwd; passwd(\"${PASS}\");" | awk '{print $2}'`
     echo ${iPASS}
 

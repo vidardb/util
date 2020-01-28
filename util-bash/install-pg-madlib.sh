@@ -43,6 +43,7 @@ _install_madlib() {
     output=apache-madlib-1.16-bin-Linux.deb
     wget https://dist.apache.org/repos/dist/release/madlib/1.16/apache-madlib-1.16-bin-Linux.deb -O "${output}"
     sudo dpkg -i "${output}"
+    sudo apt -y install python2.7
  
     sudo su - postgres -c "{
         psql -c \"CREATE USER ${PG_USER} WITH PASSWORD '${PG_PASSWD}';\"
