@@ -16,11 +16,11 @@ create table bg_task
 (
     id       serial      not null constraint bg_task_pkey primary key,
     task_id  varchar(50) default ''::character varying not null,
-    start_time DATE not null,
-    update_time DATE NOT NULL DEFAULT now(),
+    start_time timestamp not null,
+    update_time timestamp not null default now(),
     task_status varchar(20) not null default 'init',
     current_line int default 0 not null,
-    delete_flag SMALLINT default 0 not null
+    delete_flag smallint default 0 not null
 );
 
 --drop table if exists chicago_taxi_trips;
