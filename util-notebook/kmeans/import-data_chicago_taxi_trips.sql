@@ -31,10 +31,10 @@ create table chicago_taxi_trips
     trip_total decimal(10, 2),
     payment_type varchar(50) not null default '',
     company varchar(50)  default '',
-    pickup_latitude int default 0,
-    pickup_longitude int default 0,
-    dropoff_latitude int default 0,
-    dropoff_longitude int default 0
+    pickup_latitude decimal(11, 9),
+    pickup_longitude decimal(11, 9),
+    dropoff_latitude decimal(11, 9),
+    dropoff_longitude decimal(11, 9)
 );
 
 \copy chicago_taxi_trips from 'chicago_taxi_trips.csv' csv header;
