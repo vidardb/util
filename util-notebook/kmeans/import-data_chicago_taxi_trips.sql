@@ -3,7 +3,7 @@
 -- psql -U postgres -W -f import-data_chicago_taxi_trips.sql
 
 -- create user test_user, and set it's password
-create user postgres with password 'postgres';
+-- create user postgres with password 'postgres';
 
 -- create database, and set it's owner
 create database chicago_taxi_trips with owner postgres;
