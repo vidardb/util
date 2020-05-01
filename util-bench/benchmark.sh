@@ -72,7 +72,7 @@ _gen_data() {
     fi
 
     _trace "generate data for benchmarking ( size: ${size}G table: $table ) ..."
-    "$TPCHCMD" -s "$size" -S 1 -T "$table" | grep -v "TPC-H" | grep -v "Copyright" &> "$TPCHPATH/${table}.sql"
+    "$TPCHCMD" -s "$size" -T "$table" | grep -v "TPC-H" | grep -v "Copyright" &> "$TPCHPATH/${table}.sql"
 }
 
 _install_tpch
